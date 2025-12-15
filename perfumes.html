@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>AuraPerfumes</title>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-Dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">AuraPerfumes</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="perfumes.html">Perfumes</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorias
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Masculinos</a></li>
+            <li><a class="dropdown-item" href="#">Femininos</a></li>
+            <li><a class="dropdown-item" href="#">Promoções</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="compras.html">Compras e vendas</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Procurar...</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <!-- HEADER -->
+    <header class="topo">
+        <h1>Sinta o Luxo. Viva a Fragrância</h1>
+        <h2>Transforme momentos comuns em memórias inesquecíveis</h2>
+    </header>
+
+      <div class="cards-container">
+    <div class="card" style="width: 18rem;" data-name="bleu de chanel perfume masculino luxo">
+        <img src="img/pf1.png" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Perfume Rabanne 1 Million</h5>
+            <p class="card-text">Fragrância equilibrada com intensidade moderada.</p>
+            <p class="preco">R$ 799,00</p>
+            <a href="compras.html" class="btn btn-primary">Comprar</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;" data-name="armani code giorgio armani perfume masculino">
+        <img src="img/pf2.png" class="card-img-top">
+        <div class="card-body">
+            <h6 class="card-title">BLEU DE CHANEL</h6>
+            <p class="card-text">Fragrância amadeirada aromática com rastro cativante</p>
+            <p class="preco">R$ 650,00</p>
+            <a href="compras.html" class="btn btn-primary">Comprar</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;" data-name="versace dylan blue versace perfume masculino azul">
+        <img src="img/pf3.png" class="card-img-top">
+        <div class="card-body">
+            <h6 class="card-title">Desejo Essencial</h6>
+            <p class="card-text">Amadeirado aromático e  muito suave</p>
+            <p class="preco">R$ 480,00</p>
+            <a href="compras.html" class="btn btn-primary">Comprar</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;" data-name="invictus paco rabanne perfume masculino esportivo">
+        <img src="img/ppf4.png" class="card-img-top">
+        <div class="card-body">
+            <h6 class="card-title">COCO MADEMOISELLE</h6>
+            <p class="card-text"> A essência de uma mulher livre e audaciosa.</p>
+            <p class="preco">R$ 420,00</p>
+            <a href="compras.html" class="btn btn-primary">Comprar</a>
+        </div>
+    </div>
+</section>
+
+    <!-- SCRIPT BUSCA + BOTÃO -->
+    <script>
+        // Alerta dos botões
+        const botoes = document.querySelectorAll(".btn");
+        botoes.forEach(botao => {
+            botao.addEventListener("click", () => alert("Agradecemos pela sua preferencia."));
+        });
+
+        // 🔎 SISTEMA DE BUSCA FUNCIONAL
+        const searchInput = document.getElementById("searchInput");
+        const cards = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("input", () => {
+            let termo = searchInput.value.toLowerCase();
+
+            cards.forEach(card => {
+                let nome = card.getAttribute("data-name").toLowerCase();
+
+                if (nome.includes(termo)) {
+                    card.style.display = "block";
+                    card.style.opacity = "1";
+                } else {
+                    card.style.display = "none";
+                    card.style.opacity = "0";
+                }
+            });
+        });
+    </script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

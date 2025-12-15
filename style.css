@@ -1,0 +1,188 @@
+/* =====================================================
+   RESET + BASE
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url(img/body.png) no-repeat center/cover;
+  background-repeat: no-repeat;
+  background-size: cover;        /* ocupa toda a tela */
+  background-position: center;   /* centraliza */
+  background-attachment: fixed;  /* efeito elegante (opcional) */
+
+}
+
+h1, h2, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  text-align: center;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar {
+  padding: 14px 30px;
+  background: linear-gradient(90deg, #000, #1c1c1c);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff !important;
+  letter-spacing: 1px;
+}
+
+.navbar-nav {
+  gap: 20px;
+}
+
+.nav-link {
+  color: #dcdcdc !important;
+  font-size: 1.05rem;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+}
+
+.dropdown-menu {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  color: #ddd;
+}
+
+.dropdown-item:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+/* BUSCA */
+form.d-flex input {
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+form.d-flex input::placeholder {
+  color: #aaa;
+}
+
+/* =====================================================
+   HEADER / TOPO
+===================================================== */
+.topo {
+  text-align: center;
+  margin: 20px 0 40px;
+}
+
+/* =====================================================
+   CAROUSEL
+===================================================== */
+#carouselExampleControls {
+  max-width: 720px;
+  margin: 60px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0f0f0f;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.85);
+}
+
+#carouselExampleControls img {
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(55%);
+}
+
+@media (max-width: 768px) {
+  #carouselExampleControls img {
+    height: 260px;
+  }
+}
+
+/* =====================================================
+   CARDS / PRODUTOS
+===================================================== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 80px 40px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-body {
+  padding: 22px;
+  text-align: center;
+}
+
+.card-title {
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.preco {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+.card .btn {
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.12);
+}
+
+/* =====================================================
+   RESPONSIVO NAVBAR
+===================================================== */
+@media (max-width: 991px) {
+  .navbar-nav {
+    gap: 10px;
+  }
+
+  form.d-flex {
+    margin-top: 15px;
+  }
+}
